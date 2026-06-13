@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrollment-Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/enroll.css">
+  <link rel="stylesheet" href="css/typography.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="siteNav">
+    <div class="logo">Learn<span>24</span></div><button class="mobile-nav-toggle" id="mobileNavToggle"
+      aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="nav-links"><a href="index.html">Home</a>
+      <div class="nav-item" id="coursesDropdown"><a href="Courses.html"
+          class="dropdown-toggle courses-desktop-link">Courses</a>
+        <div class="courses-mobile-row"><a href="Courses.html" class="courses-mobile-link">Courses</a><button
+            type="button" class="courses-drop-btn" id="coursesToggle" aria-label="Toggle course submenu"
+            aria-expanded="false">▾</button></div>
+        <div class="dropdown-menu"><a href="coursedetail.html">Data Analysis with AI</a><a href="Courses.html">Data
+            Science with AI</a><a href="Courses.html">Data Engineering with AI</a></div>
+      </div><a href="Mentors.html">Mentors</a><a href="Testimonials.html">Testimonials</a><a href="About_Us.html">About
+        Us</a>
+    </div><a href="Enrollment_Form.html" class="nav-cta">Enroll Now</a>
+  </nav>
+
+
+  <div class="wrap">
+    <div class="brand-logo">Learn<span>24</span></div>
+
+    <div class="form-card" id="formCard">
+      <iframe name="formTarget" id="formTarget" style="display:none;"></iframe>
+      <div class="form-top">
+        <div class="form-top-tag">
+          <i class="ti ti-award" aria-hidden="true"></i>
+          Enroll Now
+        </div>
+        <h2>Reserve your seat today</h2>
+        <p>Fill in your details — our team will call you within 24 hours.</p>
+      </div>
+
+      <form id="enrollForm" method="POST" target="formTarget" onsubmit="submitForm(); return false;">
+        <div class="form-body">
+          <input type="hidden" id="fcourse" name="course" value="Data Analysis with AI">
+
+          <div class="section-divider"><span>Personal details</span>
+            <hr>
+          </div>
+
+          <div class="field">
+            <label for="fname">Full name <span class="req">*</span></label>
+            <input type="text" id="fname" name="name" placeholder="e.g. Rahul Sharma" autocomplete="name">
+            <span class="err-msg" id="fname-err">Please enter your full name</span>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="fphone">Phone number <span class="req">*</span></label>
+              <div class="phone-row">
+                <div class="phone-prefix">+91</div>
+                <input type="tel" id="fphone" name="phone" placeholder="98765 43210" maxlength="10">
+              </div>
+              <span class="err-msg" id="fphone-err">Enter a valid 10-digit number</span>
+            </div>
+            <div class="field">
+              <label for="faltphone">Alternate phone <span class="hint">(optional)</span></label>
+              <div class="phone-row">
+                <div class="phone-prefix">+91</div>
+                <input type="tel" id="faltphone" name="alt_phone" placeholder="98765 43210" maxlength="10">
+              </div>
+              <span class="err-msg" id="faltphone-err">Enter a valid 10-digit number</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="flocation">Location <span class="req">*</span></label>
+            <select id="flocation" name="location">
+              <option value="" disabled selected>Select your city</option>
+              <optgroup label="Metro Cities">
+                <option>Mumbai</option>
+                <option>Delhi / NCR</option>
+                <option>Bangalore</option>
+                <option>Hyderabad</option>
+                <option>Chennai</option>
+                <option>Kolkata</option>
+                <option>Pune</option>
+                <option>Ahmedabad</option>
+              </optgroup>
+              <optgroup label="Other Cities">
+                <option>Jaipur</option>
+                <option>Lucknow</option>
+                <option>Chandigarh</option>
+                <option>Indore</option>
+                <option>Bhopal</option>
+                <option>Kochi</option>
+                <option>Coimbatore</option>
+                <option>Surat</option>
+                <option>Nagpur</option>
+                <option>Vizag</option>
+              </optgroup>
+              <option>Other</option>
+            </select>
+            <span class="err-msg" id="flocation-err">Please select your city</span>
+          </div>
+
+          <div class="section-divider"><span>Professional background</span>
+            <hr>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="fexp">Work experience <span class="req">*</span></label>
+              <select id="fexp" name="experience">
+                <option value="" disabled selected>Select years</option>
+                <option>Fresher (0–1 yr)</option>
+                <option>1–2 years</option>
+                <option>2–4 years</option>
+                <option>4–6 years</option>
+                <option>6–9 years</option>
+                <option>9–12 years</option>
+                <option>12+ years</option>
+              </select>
+              <span class="err-msg" id="fexp-err">Please select experience</span>
+            </div>
+            <div class="field">
+              <label for="fctc">Current CTC <span class="req">*</span></label>
+              <select id="fctc" name="current_ctc">
+                <option value="" disabled selected>Select range</option>
+                <option>Below ₹3 LPA</option>
+                <option>₹3 – ₹5 LPA</option>
+                <option>₹5 – ₹8 LPA</option>
+                <option>₹8 – ₹12 LPA</option>
+                <option>₹12 – ₹18 LPA</option>
+                <option>₹18 – ₹25 LPA</option>
+                <option>Above ₹25 LPA</option>
+                <option>Fresher / Not working</option>
+              </select>
+              <span class="err-msg" id="fctc-err">Please select CTC range</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="findustry">Current industry <span class="req">*</span></label>
+            <select id="findustry" name="industry">
+              <option value="" disabled selected>Select your industry</option>
+              <option>Banking &amp; Financial Services</option>
+              <option>IT &amp; Software</option>
+              <option>E-commerce &amp; Retail</option>
+              <option>Healthcare &amp; Pharma</option>
+              <option>Manufacturing &amp; Engineering</option>
+              <option>Media &amp; Advertising</option>
+              <option>Education &amp; EdTech</option>
+              <option>Consulting &amp; Professional Services</option>
+              <option>Logistics &amp; Supply Chain</option>
+              <option>Real Estate</option>
+              <option>FMCG &amp; Consumer Goods</option>
+              <option>Telecom</option>
+              <option>Government &amp; Public Sector</option>
+              <option>Startup / Early-stage</option>
+              <option>Other</option>
+            </select>
+            <span class="err-msg" id="findustry-err">Please select your industry</span>
+          </div>
+
+          <div class="section-divider"><span>Choose your course</span>
+            <hr>
+          </div>
+
+          <div class="course-opts">
+            <div class="course-opt sel" id="co1" onclick="selectCourse(1)">
+              <div class="co-icon co-i-blue">📊</div>
+              <div class="co-text">
+                <div class="co-name">Data Analysis with AI</div>
+                <div class="co-dur">18 weeks · ₹14,999 · IIT supervised</div>
+              </div>
+              <div class="co-check checked" id="chk1"><i class="ti ti-check"></i></div>
+            </div>
+            <div class="course-opt" id="co2" onclick="selectCourse(2)">
+              <div class="co-icon co-i-teal">🤖</div>
+              <div class="co-text">
+                <div class="co-name">Data Science with AI</div>
+                <div class="co-dur">24 weeks · IIT supervised</div>
+              </div>
+              <div class="co-check" id="chk2"><i class="ti ti-check"></i></div>
+            </div>
+            <div class="course-opt" id="co3" onclick="selectCourse(3)">
+              <div class="co-icon co-i-purple">📣</div>
+              <div class="co-text">
+                <div class="co-name">Digital Marketing with AI</div>
+                <div class="co-dur">20 weeks · IIM supervised</div>
+              </div>
+              <div class="co-check" id="chk3"><i class="ti ti-check"></i></div>
+            </div>
+          </div>
+
+          <div class="guarantee-row">
+            <i class="ti ti-shield-check" aria-hidden="true"></i>
+            <p><strong>100% Job Guarantee</strong> — complete the programme and get placed, or receive a full fee
+              refund.</p>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Reserve my seat
+            <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </button>
+
+          <p class="disclaimer">No payment required now · Our counsellor will call within 24 hours</p>
+
+        </div>
+      </form>
+
+      <div class="trust-row">
+        <div class="trust-item"><i class="ti ti-shield-check"></i> Job guaranteed</div>
+        <div class="trust-item"><i class="ti ti-school"></i> IIT &amp; IIM supervised</div>
+        <div class="trust-item"><i class="ti ti-users"></i> 120+ placed</div>
+      </div>
+    </div>
+
+    <div class="success-card" id="successCard">
+      <div class="success-icon"><i class="ti ti-check"></i></div>
+      <h3>You're on the list!</h3>
+      <p>Thank you for enrolling. Our counselling team will call you on <strong id="sPhone"></strong> within 24 hours.
+      </p>
+      <div class="success-detail">
+        <div class="sd-row"><span>Name</span><span id="sName"></span></div>
+        <div class="sd-row"><span>Phone</span><span id="sPhoneD"></span></div>
+        <div class="sd-row"><span>Location</span><span id="sLoc"></span></div>
+        <div class="sd-row"><span>Experience</span><span id="sExp"></span></div>
+        <div class="sd-row"><span>Industry</span><span id="sInd"></span></div>
+        <div class="sd-row"><span>Current CTC</span><span id="sCtc"></span></div>
+        <div class="sd-row"><span>Course</span><span id="sCourse"></span></div>
+        <div class="sd-row"><span>Batch starts</span><span>July 15, 2025</span></div>
+      </div>
+      <div class="success-tag">Seat reservation received</div>
+      <p style="font-size:13px; color:var(--color-text-secondary);">Questions? Call us at <strong
+          style="color:var(--color-text-primary);">+91 98765 43210</strong></p>
+    </div>
+
+    <div class="popup-overlay" id="batchPopup">
+      <div class="popup-box">
+        <h3>Batch is Full</h3>
+        <p>
+          Sorry! The selected batch is currently full.
+          Please choose another course or contact our counsellor.
+        </p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/enroll.js"></script>
+</body>
+
+</html>
