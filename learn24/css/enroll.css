@@ -186,7 +186,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--gray-light); color:
 .form-top { background: linear-gradient(135deg, var(--blue), var(--blue-mid)); padding: 34px 36px 30px; }
 .form-top-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); border-radius: 999px; padding: 8px 14px; font-size: 12px; color: #fff; margin-bottom: 14px; }
 .form-top h2 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.1; }
-.form-top p { font-size: 14px; color: rgba(255,255,255,0.85); max-width: 560px; }
+.form-top p { font-size: 15px; font-weight: 600; color: #000; max-width: 560px; }
 
 .form-body { padding: 32px 36px 36px; display: flex; flex-direction: column; gap: 20px; }
 .section-divider { display: flex; align-items: center; gap: 12px; margin: 0; }
@@ -249,6 +249,13 @@ body { font-family: 'DM Sans', sans-serif; background: var(--gray-light); color:
 .sd-row span:first-child { color: var(--color-text-tertiary); }
 .sd-row span:last-child { font-weight: 600; color: var(--color-text-primary); text-align: right; }
 .success-tag { background: #E1F5EE; color: #085041; font-size: 12px; font-weight: 600; padding: 7px 16px; border-radius: 999px; border: 1px solid #9FE1CB; }
+
+.disabled-course {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
 
 .popup-overlay{
   position:fixed;

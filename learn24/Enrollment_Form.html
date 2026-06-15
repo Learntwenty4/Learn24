@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo/favicon.png">
   <title>Enrollment-Form</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +60,8 @@
           <div class="field">
             <label for="fname">Full name <span class="req">*</span></label>
             <input type="text" id="fname" name="name" placeholder="e.g. Rahul Sharma" autocomplete="name">
-            <span class="err-msg" id="fname-err">Please enter your full name</span>
+            <span class="err-msg" id="fname-err">Please enter a valid full name (3-50 characters, letters and spaces
+              only)</span>
           </div>
 
           <div class="row2">
@@ -121,6 +123,7 @@
               <label for="fexp">Work experience <span class="req">*</span></label>
               <select id="fexp" name="experience">
                 <option value="" disabled selected>Select years</option>
+                <option>Student</option>
                 <option>Fresher (0–1 yr)</option>
                 <option>1–2 years</option>
                 <option>2–4 years</option>
@@ -166,6 +169,7 @@
               <option>Telecom</option>
               <option>Government &amp; Public Sector</option>
               <option>Startup / Early-stage</option>
+              <option>Fresher / Job Seeker</option>
               <option>Other</option>
             </select>
             <span class="err-msg" id="findustry-err">Please select your industry</span>
@@ -180,32 +184,36 @@
               <div class="co-icon co-i-blue">📊</div>
               <div class="co-text">
                 <div class="co-name">Data Analysis with AI</div>
-                <div class="co-dur">18 weeks · ₹14,999 · IIT supervised</div>
+                <div class="co-dur">18 weeks · IIT supervised</div>
               </div>
               <div class="co-check checked" id="chk1"><i class="ti ti-check"></i></div>
             </div>
-            <div class="course-opt" id="co2" onclick="selectCourse(2)">
+            <div class="course-opt disabled-course" id="co2" ">
+              <!-- onclick=" selectCourse(2) add this data start submitting -->
               <div class="co-icon co-i-teal">🤖</div>
               <div class="co-text">
                 <div class="co-name">Data Science with AI</div>
                 <div class="co-dur">24 weeks · IIT supervised</div>
               </div>
-              <div class="co-check" id="chk2"><i class="ti ti-check"></i></div>
+              <div class="co-check " id="chk2"><i class="ti ti-check"></i></div>
             </div>
-            <div class="course-opt" id="co3" onclick="selectCourse(3)">
+            <div class="course-opt disabled-course " id="co3">
+              <!-- onclick="selectCourse(3) add this data start submitting -->
               <div class="co-icon co-i-purple">📣</div>
               <div class="co-text">
                 <div class="co-name">Digital Marketing with AI</div>
                 <div class="co-dur">20 weeks · IIM supervised</div>
               </div>
-              <div class="co-check" id="chk3"><i class="ti ti-check"></i></div>
+              <div class="co-check " id="chk3"><i class="ti ti-check"></i></div>
             </div>
           </div>
 
           <div class="guarantee-row">
             <i class="ti ti-shield-check" aria-hidden="true"></i>
-            <p><strong>100% Job Guarantee</strong> — complete the programme and get placed, or receive a full fee
-              refund.</p>
+            <p>
+  Full refund if no offer is received within 100 days of completion
+  (<a href="terms.html">Terms &amp; Conditions apply</a>).
+</p>
           </div>
 
           <button type="submit" class="submit-btn">
