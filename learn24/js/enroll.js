@@ -16,29 +16,38 @@ function setCourseValue() {
   }
 }
 
+
+// Future mein disabled-course aur if (n !== 1) return; hata dena.
+
 function selectCourse(n) {
-  for (var i = 1; i <= 3; i++) {
-    document.getElementById('co' + i).className = 'course-opt';
-    document.getElementById('chk' + i).className = 'co-check';
-  }
 
-  selected = n;
+  // Sirf course 1 allow hai
+  if (n !== 1) return;
 
-  document.getElementById('co' + n).className =
-    'course-opt ' + colors[n - 1].opt;
+  // Reset active state
+  document.getElementById('co1').className = 'course-opt';
+  document.getElementById('chk1').className = 'co-check';
 
-  document.getElementById('chk' + n).className =
-    'co-check ' + colors[n - 1].chk;
+  // Disabled courses ko disabled hi rakho
+  document.getElementById('co2').className = 'course-opt disabled-course';
+  document.getElementById('chk2').className = 'co-check';
 
-  // Hidden field update
-  if (n == 1) {
-    document.getElementById('fcourse').value = 'Data Analysis with AI';
-  } else if (n == 2) {
-    document.getElementById('fcourse').value = 'Data Science with AI';
-  } else if (n == 3) {
-    document.getElementById('fcourse').value = 'Digital Marketing with AI';
-  }
+  document.getElementById('co3').className = 'course-opt disabled-course';
+  document.getElementById('chk3').className = 'co-check';
+
+  selected = 1;
+
+  // Activate course 1
+  document.getElementById('co1').className =
+    'course-opt ' + colors[0].opt;
+
+  document.getElementById('chk1').className =
+    'co-check ' + colors[0].chk;
+
+  document.getElementById('fcourse').value =
+    'Data Analysis with AI';
 }
+
 function validate(id, errId, check) {
   var el = document.getElementById(id);
   var err = document.getElementById(errId);
@@ -59,9 +68,20 @@ function submitForm() {
 
 
   var ok = true;
-  ok = validate('fname', 'fname-err', function(v){ return v.trim().length > 1; }) && ok;
-  ok = validate('fphone', 'fphone-err', function(v){ return /^\d{10}$/.test(v.trim().replace(/\s/g,'')); }) && ok;
-  var alt = document.getElementById('faltphone').value.trim().replace(/\s/g,'');
+  ok = validate('fname', 'fname-err', function (v) {
+    v = v.trim();
+
+    // Only letters and spaces, minimum 3 characters
+    return /^[A-Za-z\s]{3,50}$/.test(v);
+  }) && ok;
+
+  ok = validate('fphone', 'fphone-err', function (v) {
+    v = v.trim().replace(/\s/g, '');
+
+    return /^[6-9]\d{9}$/.test(v);
+  }) && ok;
+
+  var alt = document.getElementById('faltphone').value.trim().replace(/\s/g, '');
   if (alt && !/^\d{10}$/.test(alt)) {
     document.getElementById('faltphone').className = 'err';
     document.getElementById('faltphone').style.border = '1.5px solid #A32D2D';
@@ -71,10 +91,10 @@ function submitForm() {
     document.getElementById('faltphone').style.border = '';
     document.getElementById('faltphone-err').className = 'err-msg';
   }
-  ok = validate('flocation', 'flocation-err', function(v){ return v !== ''; }) && ok;
-  ok = validate('fexp', 'fexp-err', function(v){ return v !== ''; }) && ok;
-  ok = validate('fctc', 'fctc-err', function(v){ return v !== ''; }) && ok;
-  ok = validate('findustry', 'findustry-err', function(v){ return v !== ''; }) && ok;
+  ok = validate('flocation', 'flocation-err', function (v) { return v !== ''; }) && ok;
+  ok = validate('fexp', 'fexp-err', function (v) { return v !== ''; }) && ok;
+  ok = validate('fctc', 'fctc-err', function (v) { return v !== ''; }) && ok;
+  ok = validate('findustry', 'findustry-err', function (v) { return v !== ''; }) && ok;
   if (!ok) return;
 
   var phone = '+91 ' + document.getElementById('fphone').value.trim();
@@ -97,17 +117,17 @@ function submitForm() {
 
   setCourseValue();
 
-// Data Science & Digital Marketing
-if (selected === 2 || selected === 3) {
-  document.getElementById('batchPopup').style.display = 'flex';
-  return;
-}
+  // Data Science & Digital Marketing
+  if (selected === 2 || selected === 3) {
+    document.getElementById('batchPopup').style.display = 'flex';
+    return;
+  }
 
-// Data Analysis
-document.getElementById('enrollForm').submit();
+  // Data Analysis
+  document.getElementById('enrollForm').submit();
 
-document.getElementById('formCard').style.display = 'none';
-document.getElementById('successCard').classList.add('show');
+  document.getElementById('formCard').style.display = 'none';
+  document.getElementById('successCard').classList.add('show');
 
 
 
@@ -118,7 +138,7 @@ function closePopup() {
   document.getElementById('batchPopup').style.display = 'none';
 };
 
-(function() {
+(function () {
   var toggle = document.getElementById('mobileNavToggle');
   var siteNav = document.getElementById('siteNav');
   var coursesDropdown = document.getElementById('coursesDropdown');
@@ -126,14 +146,14 @@ function closePopup() {
 
   if (!toggle || !siteNav) return;
 
-  toggle.addEventListener('click', function() {
+  toggle.addEventListener('click', function () {
     var isOpen = siteNav.classList.toggle('nav-open');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     toggle.textContent = isOpen ? '×' : '☰';
   });
 
   if (coursesToggle && coursesDropdown) {
-    coursesToggle.addEventListener('click', function(event) {
+    coursesToggle.addEventListener('click', function (event) {
       event.preventDefault();
       event.stopPropagation();
       var isOpen = coursesDropdown.classList.toggle('open');
@@ -141,7 +161,7 @@ function closePopup() {
     });
   }
 
-  document.addEventListener('click', function(event) {
+  document.addEventListener('click', function (event) {
     if (!siteNav.contains(event.target) && siteNav.classList.contains('nav-open')) {
       siteNav.classList.remove('nav-open');
       toggle.setAttribute('aria-expanded', 'false');
