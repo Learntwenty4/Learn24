@@ -45,7 +45,7 @@
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-white);
             color: var(--text-dark);
             line-height: 1.65;
@@ -115,7 +115,7 @@
             justify-content: space-between;
         }
 
-       .logo { font-family:'Sora',sans-serif; font-weight:800; font-size:22px; letter-spacing:-.5px; color:#002970; flex-shrink:0; }
+       .logo { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:22px; letter-spacing:-.5px; color:#002970; flex-shrink:0; }
     .logo span { color:#00b9f5; }
 
 

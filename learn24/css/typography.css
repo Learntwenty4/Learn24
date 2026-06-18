@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 16px;
   line-height: 1.65;
   font-weight: 400;
@@ -21,7 +21,7 @@ h6,
 .logo,
 .brand-logo,
 .footer-logo {
-  font-family: 'Sora', 'DM Sans', system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   letter-spacing: 0;
 }
 
@@ -134,7 +134,8 @@ li,
 
 .nav-links > a,
 .dropdown-toggle,
-.dropdown-menu a {
+.dropdown-menu a,
+.courses-mobile-link {
   font-size: 14.5px;
 }
 
@@ -376,7 +377,8 @@ footer {
 
   .nav-links > a,
   .dropdown-toggle,
-  .dropdown-menu a {
+  .dropdown-menu a,
+  .courses-mobile-link {
     font-size: 14px;
   }
 

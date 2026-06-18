@@ -1,0 +1,51 @@
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+a, button { -webkit-tap-highlight-color: transparent; }
+
+/* ── NAV (shared across About, Courses, Course Detail, Home, Mentors, Testimonials) ── */
+nav { display:flex; align-items:center; justify-content:space-between; padding:0 48px; min-height:72px; background:rgba(255,255,255,.96); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; backdrop-filter:blur(14px); }
+.logo span { color:#00b9f5; }
+.nav-links { display:flex; gap:24px; align-items:center; }
+.nav-links>a:hover,.dropdown-toggle:hover { background:rgba(24,95,165,.08); color:var(--blue); }
+.nav-item { position:relative; }
+.dropdown-toggle::after { content:'▾'; font-size:10px; color:currentColor; }
+.dropdown-menu { position:absolute; top:calc(100% + 10px); left:0; min-width:240px; background:var(--white); border:1px solid var(--border); border-radius:18px; box-shadow:0 24px 60px rgba(13,27,42,.14); padding:8px 0; opacity:0; visibility:hidden; transform:translateY(16px); transition:.18s ease; z-index:20; }
+.dropdown-menu a { display:block; padding:14px 20px; color:var(--near-black); font-size:14px; font-weight:500; text-decoration:none; white-space:nowrap; transition:.18s ease; border-bottom:1px solid rgba(226,232,240,.8); }
+.dropdown-menu a:last-child { border-bottom:none; }
+.dropdown-menu a:hover { background:rgba(230,241,251,.95); color:var(--blue); transform:translateX(4px); }
+.nav-item:hover .dropdown-menu,.nav-item.open .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-item:hover>.dropdown-toggle { color:var(--blue); }
+.mobile-nav-toggle { display:none; width:42px; height:42px; border:1px solid var(--border); border-radius:12px; background:var(--white); color:var(--near-black); font-size:22px; cursor:pointer; align-items:center; justify-content:center; }
+.courses-mobile-row { display:none; }
+
+/* ── TRUST BAR (shared) ── */
+.trust-bar { background:var(--near-black); padding:10px 48px; display:flex; align-items:center; justify-content:center; gap:32px; flex-wrap:wrap; }
+.trust-item { display:flex; align-items:center; gap:8px; font-size:13px; color:rgba(255,255,255,.85); }
+.trust-item strong { color:#FFD166; font-weight:600; }
+.trust-sep { color:rgba(255,255,255,.2); font-size:16px; }
+
+/* ── FOOTER (shared) ── */
+.footer-logo { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:20px; color:#fff; }
+.footer-logo span { color:#5CB8FF; }
+.footer-bottom p { font-size:12px; color:rgba(255,255,255,.25); }
+
+/* ── MOBILE NAV DROPDOWN (shared, ≤1024px) ── */
+@media (max-width:1024px){
+  #siteNav{padding:12px 24px;min-height:64px;flex-wrap:wrap;gap:12px}
+  #siteNav .mobile-nav-toggle{display:flex}
+  #siteNav .nav-links{display:none;width:100%;flex-direction:column;align-items:stretch;gap:6px;padding:12px 0 4px;border-top:1px solid var(--border)}
+  #siteNav.nav-open .nav-links{display:flex}
+  #siteNav .nav-links>a,#siteNav .dropdown-toggle{width:100%;justify-content:space-between;border-radius:12px;padding:12px 14px;background:var(--gray-light);color:var(--near-black)}
+  #siteNav .nav-item{width:100%}
+  #siteNav .courses-desktop-link{display:none}
+  #siteNav .courses-mobile-row{display:flex;width:100%;gap:8px;align-items:center}
+  #siteNav .courses-mobile-link{flex:1;display:flex;align-items:center;border-radius:12px;padding:12px 14px;background:var(--gray-light);color:var(--near-black);font-size:14px;text-decoration:none;transition:.18s ease;min-height:46px}
+  #siteNav .courses-mobile-link:hover{background:rgba(24,95,165,.08);color:var(--blue)}
+  #siteNav .courses-drop-btn{width:46px;height:46px;flex-shrink:0;border-radius:12px;border:1px solid var(--border);background:var(--blue-light);color:var(--blue);font-size:16px;font-weight:700;cursor:pointer;transition:transform .25s ease,background .18s ease;display:flex;align-items:center;justify-content:center}
+  #siteNav .courses-drop-btn:hover{background:#d8ebfb}
+  #siteNav .nav-item.open .courses-drop-btn{transform:rotate(180deg)}
+  #siteNav .dropdown-menu{position:static;min-width:0;width:100%;box-shadow:none;border-radius:14px;margin-top:8px;display:none;opacity:1;visibility:visible;transform:none}
+  #siteNav .nav-item.open .dropdown-menu{display:block}
+  #siteNav .nav-cta{display:none;width:100%;text-align:center;justify-content:center}
+  #siteNav.nav-open .nav-cta{display:flex}
+}
