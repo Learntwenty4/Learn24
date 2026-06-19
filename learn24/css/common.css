@@ -29,6 +29,20 @@ nav { display:flex; align-items:center; justify-content:space-between; padding:0
 .footer-logo span { color:#5CB8FF; }
 .footer-bottom p { font-size:12px; color:rgba(255,255,255,.25); }
 
+/* ── FOOTER ACCORDION (shared) — desktop/tablet: looks identical to a plain <h5> list; ≤768px: collapses each column behind a tap-to-expand toggle so the footer doesn't dump 9 links on phones ── */
+.footer-col-toggle { display:block; width:100%; background:none; border:none; padding:0; margin-bottom:10px; font-family:inherit; text-align:left; cursor:default; font-size:11px; font-weight:600; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.08em; }
+.footer-col-arrow { display:none; }
+.footer-col-links { display:block; }
+@media (max-width:768px){
+  .footer-links{flex-direction:column;gap:0;width:100%}
+  .footer-col{width:100%;border-bottom:1px solid rgba(255,255,255,.08)}
+  .footer-col-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 0;margin-bottom:0}
+  .footer-col-arrow{display:inline-block;font-size:16px;line-height:1;color:rgba(255,255,255,.4);transition:transform .2s ease}
+  .footer-col.open .footer-col-arrow{transform:rotate(45deg)}
+  .footer-col .footer-col-links{display:none;padding-bottom:14px}
+  .footer-col.open .footer-col-links{display:block}
+}
+
 /* ── MOBILE NAV DROPDOWN (shared, ≤1024px) ── */
 @media (max-width:1024px){
   #siteNav{padding:12px 24px;min-height:64px;flex-wrap:wrap;gap:12px}

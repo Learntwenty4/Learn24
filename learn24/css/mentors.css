@@ -91,8 +91,8 @@
     .trainer-exp strong { color:var(--near-black); }
 
     /* IIT IIM NOTE */
-    .iit-note { background:var(--white); padding:48px 48px; }
-    .iit-inner { background:var(--near-black); border-radius:20px; padding:44px 48px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; max-width:1260px; margin:0 auto; }
+    .iit-note { background:var(--gray-light); padding:0 48px 64px; }
+    .iit-inner { background:var(--near-black); border-radius:20px; padding:44px 48px; box-shadow:0 24px 48px -16px rgba(13,27,42,.28); display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; max-width:1260px; margin:0 auto; }
     .iit-left h2 { font-family:'Plus Jakarta Sans',sans-serif; font-size:26px; font-weight:700; color:#fff; margin-bottom:12px; line-height:1.3; }
     .iit-left h2 span { color:#FFD166; }
     .iit-left p { font-size:14px; color:rgba(255,255,255,.65); line-height:1.7; }
@@ -119,6 +119,7 @@
     @media (max-width:1024px){
       .page-hero{grid-template-columns:1fr;padding:56px 24px;gap:36px}
       .cm-grid,.trainers-grid{grid-template-columns:repeat(2,1fr)}
+      .iit-note{padding:0 24px 48px}
       .iit-inner{grid-template-columns:1fr;gap:32px;padding:36px 32px}
       .footer-top{flex-direction:column}
       .footer-links{width:100%;justify-content:space-between}
@@ -126,18 +127,22 @@
     @media (max-width:768px){
       .trust-bar{display:none}
       nav{min-height:64px;padding:12px 16px;flex-wrap:wrap;gap:12px}
-      .page-hero{padding:32px 14px;gap:28px}
-      .ph-left{gap:12px}
+      .page-hero{padding:32px 14px;gap:20px}
+      .ph-left{gap:10px}
       .ph-left h1{font-size:26px;line-height:1.25}
       .ph-left p{font-size:13px;line-height:1.5}
       .ph-badges{gap:6px}
       .ph-badge{font-size:11px;padding:4px 10px}
-      .ph-right{grid-template-columns:repeat(2,1fr);gap:10px}
-      .ph-stat{padding:12px 8px;border-radius:12px}
-      .ph-stat-num{font-size:22px;margin-bottom:2px}
+      .ph-right{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 22px}
+      .ph-stat{background:none;border:none;padding:0}
+      .ph-stat-num{font-size:22px;margin-bottom:0}
       .ph-stat-label{font-size:11px;line-height:1.2}
-      .cm-section,.trainers-section,.iit-note{padding:50px 16px}
-      .iit-inner{padding:32px 22px}
+      .cm-section,.trainers-section{padding:50px 16px}
+      .iit-note{padding:0 16px 20px}
+      .iit-inner{padding:26px 20px}
+      .iit-right{gap:10px}
+      .iit-point-text p{margin-bottom:1px}
+      .iit-point-text span{font-size:11.5px;line-height:1.4}
       .cm-grid,.trainers-grid{grid-template-columns:1fr}
       footer{padding:36px 16px}
       .footer-links{flex-wrap:wrap;gap:24px}
@@ -147,7 +152,7 @@
       nav{padding:12px 14px}
       .logo{font-size:20px}
       .ph-left h1{font-size:24px}
-      .ph-right{grid-template-columns:1fr 1fr}
+      .ph-right{gap:10px 16px}
       .ph-stat-num{font-size:20px}
       .cm-section-header h2,.section-header h2,.iit-left h2{font-size:22px}
       .footer-links{flex-direction:column}

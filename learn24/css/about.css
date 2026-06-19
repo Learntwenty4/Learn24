@@ -179,18 +179,17 @@
       .trust-bar{display:none}
       nav{min-height:64px;padding:12px 16px;flex-wrap:wrap;gap:12px}
       /* Hero compact */
-      .page-hero{padding:36px 16px;gap:28px}
+      .page-hero{padding:32px 16px;gap:20px}
+      .ph-left{gap:10px}
       .ph-left h1{font-size:26px}
       .ph-left p{font-size:13px}
       .ph-badges{gap:6px}
       .ph-badge{font-size:11px;padding:5px 10px}
-      .ph-quote-card{padding:22px 20px}
-      .ph-quote-text{font-size:15px}
-      .ph-quote-text::before,.ph-quote-text::after{font-size:22px}
-      .ph-stats-row{gap:10px}
-      .ph-stat{padding:14px 10px}
-      .ph-stat-num{font-size:20px}
-      .ph-stat-label{font-size:10px}
+      .ph-quote-card{display:none}
+      .ph-stats-row{gap:14px}
+      .ph-stat{background:none;border:none;padding:0}
+      .ph-stat-num{font-size:22px}
+      .ph-stat-label{font-size:11px}
       /* Sections */
       .mission-section,.story-section,.values-section,.team-section,.iit-section{padding:48px 16px}
       .mission-left h2,.story-right h2,.iit-header h2,.values-header h2,.team-header h2,.impact-left h2,.cta-strip h2{font-size:24px}
@@ -198,9 +197,9 @@
       .values-grid{grid-template-columns:1fr;gap:14px}
       .value-card{flex-direction:column;gap:12px}
       .impact-section{display:none}
-      .cta-strip{padding:40px 16px}
-      .cta-strip-btns{flex-direction:column;width:100%}
-      .btn-white,.btn-outline-white{width:100%}
+      .cta-strip{padding:30px 16px;gap:14px}
+      .cta-strip-btns{flex-direction:row;width:100%;gap:10px}
+      .btn-white,.btn-outline-white{flex:1;width:auto;padding:11px 8px;font-size:13px;white-space:normal}
       footer{padding:32px 16px}
       .footer-top>div:first-child{text-align:center;margin-bottom:8px}
       .footer-links{flex-wrap:wrap;gap:16px;justify-content:center}
@@ -215,7 +214,7 @@
       .logo{font-size:20px}
       .page-hero{padding:28px 14px}
       .ph-left h1{font-size:24px}
-      .ph-stats-row{grid-template-columns:repeat(3,1fr);gap:6px}
+      .ph-stats-row{grid-template-columns:repeat(3,1fr);gap:10px}
       .ph-stat-num{font-size:18px}
       .impact-right{grid-template-columns:1fr 1fr}
       .footer-links{flex-direction:column;gap:12px}

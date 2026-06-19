@@ -163,6 +163,9 @@
     .curr-table tbody td { padding:10px 14px; color:var(--near-black); vertical-align:top; border-right:1px solid var(--border); font-size:12px; line-height:1.5; }
     .curr-table tbody td:last-child { border-right:none; }
 
+    /* Temporarily disabled CTA — remove this class + the data-href swap to re-enable */
+    .btn-disabled { opacity:.7; cursor:not-allowed; pointer-events:none; filter:grayscale(.15); }
+
     /* ── CTA ── */
     .cta-strip { background:linear-gradient(135deg,var(--near-black) 0%,#1a2c40 100%); padding:64px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; position:relative; overflow:hidden; }
     .cta-strip::before { content:''; position:absolute; top:50%; right:-10%; width:50%; height:200%; background:radial-gradient(circle,rgba(255,209,102,.12) 0%,transparent 60%); pointer-events:none; transform:translateY(-50%); }
@@ -230,9 +233,9 @@
       .outcome-grid{grid-template-columns:1fr;gap:10px}
       .mentor-card{align-items:flex-start;gap:14px;padding:18px 0}
       .mentor-avatar{width:48px;height:48px;font-size:14px}
-      .cta-strip{padding:40px 16px;gap:20px}
-      .cta-strip-btns{flex-direction:column;width:100%}
-      .btn-white,.btn-outline-white{width:100%}
+      .cta-strip{padding:30px 16px;gap:14px}
+      .cta-strip-btns{flex-direction:row;width:100%;gap:8px}
+      .btn-white,.btn-outline-white{flex:1;width:auto;padding:11px 6px;font-size:12.5px;white-space:normal}
       footer{padding:32px 16px}
       .footer-top>div:first-child{text-align:center;margin-bottom:8px}
       .footer-links{flex-wrap:wrap;gap:16px;justify-content:center}

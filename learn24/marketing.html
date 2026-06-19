@@ -122,8 +122,8 @@
         </div>
       </div>
 
-      <a href="Enrollment_Form.html" class="btn-enroll">Reserve My Seat</a>
-      <button class="btn-counsellor">Talk to a Counsellor</button>
+      <a href="javascript:void(0)" data-href="Enrollment_Form.html" class="btn-enroll btn-disabled" aria-disabled="true" tabindex="-1">Reserve My Seat</a>
+      <a href="tel:+918920680256" class="btn-counsellor">Talk to a Counsellor</a>
     </div>
   </section>
 
@@ -425,7 +425,7 @@
             100% written job guarantee. Complete the program and if you don't get placed, you receive a <strong>full refund</strong>.
           </div>
         </div>
-        <a href="Enrollment_Form.html" class="btn-enroll" style="margin-top:4px;">Reserve My Seat</a>
+        <a href="javascript:void(0)" data-href="Enrollment_Form.html" class="btn-enroll btn-disabled" aria-disabled="true" tabindex="-1" style="margin-top:4px;">Reserve My Seat</a>
       </div>
     </aside>
   </div>
@@ -434,7 +434,7 @@
   <section class="cta-strip">
     <h2>Ready to build a high-growth digital marketing career? <span>Your seat is waiting.</span></h2>
     <div class="cta-strip-btns">
-      <a href="Enrollment_Form.html" class="btn-white">Reserve My Seat</a>
+      <a href="javascript:void(0)" data-href="Enrollment_Form.html" class="btn-white btn-disabled" aria-disabled="true" tabindex="-1">Reserve My Seat</a>
       <button class="btn-outline-white">Download Syllabus</button>
     </div>
   </section>
@@ -448,22 +448,28 @@
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h5>Courses</h5>
-          <a href="coursedetail.html">Data Analysis with AI</a>
-          <a href="Science.html">Data Science with AI</a>
-          <a href="marketing.html">Digital Marketing with AI</a>
+          <button type="button" class="footer-col-toggle" aria-expanded="false">Courses<span class="footer-col-arrow">+</span></button>
+          <div class="footer-col-links">
+            <a href="coursedetail.html">Data Analysis with AI</a>
+            <a href="Science.html">Data Science with AI</a>
+            <a href="marketing.html">Digital Marketing with AI</a>
+          </div>
         </div>
         <div class="footer-col">
-          <h5>Company</h5>
-          <a href="About_Us.html">About Us</a>
-          <a href="Mentors.html">Mentors</a>
-          <a href="Testimonials.html">Testimonials</a>
+          <button type="button" class="footer-col-toggle" aria-expanded="false">Company<span class="footer-col-arrow">+</span></button>
+          <div class="footer-col-links">
+            <a href="About_Us.html">About Us</a>
+            <a href="Mentors.html">Mentors</a>
+            <a href="Testimonials.html">Testimonials</a>
+          </div>
         </div>
         <div class="footer-col">
-          <h5>Contact</h5>
-          <a href="mailto:info@learn24.in">info@learn24.in</a>
-          <a href="tel:+918920680256">+91 89206 80256</a>
-          <a href="Enrollment_Form.html">Enroll Now</a>
+          <button type="button" class="footer-col-toggle" aria-expanded="false">Contact<span class="footer-col-arrow">+</span></button>
+          <div class="footer-col-links">
+            <a href="mailto:info@learn24.in">info@learn24.in</a>
+            <a href="tel:+918920680256">+91 89206 80256</a>
+            <a href="Enrollment_Form.html">Enroll Now</a>
+          </div>
         </div>
       </div>
     </div>
@@ -498,6 +504,14 @@
         mobileNavToggle.setAttribute('aria-expanded', 'false');
         mobileNavToggle.textContent = '☰';
       }
+    });
+
+    document.querySelectorAll('.footer-col-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const col = btn.closest('.footer-col');
+        const isOpen = col.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
     });
   </script>
 </body>
