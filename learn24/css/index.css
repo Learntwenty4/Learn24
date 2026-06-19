@@ -95,14 +95,44 @@
     .footer-top { display:flex; justify-content:space-between; align-items:flex-start; gap:32px; width:100%; }
     .footer-tagline { font-size:12px; color:rgba(255,255,255,.4); margin-top:4px; }
     .footer-links { display:flex; gap:48px; }
-    .footer-col h5 { font-size:11px; font-weight:600; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px; }
+    .footer-col-toggle { display:block; width:100%; background:none; border:none; padding:0; margin-bottom:10px; font-family:inherit; text-align:left; cursor:default; font-size:11px; font-weight:600; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.08em; }
+    .footer-col-arrow { display:none; }
+    .footer-col-links { display:block; }
     .footer-col a { display:block; font-size:13px; color:rgba(255,255,255,.6); text-decoration:none; margin-bottom:7px; transition:color .2s ease,transform .2s ease; } .footer-col a:hover { color:#fff; transform:translateX(3px); }
     .footer-bottom { border-top:1px solid rgba(255,255,255,.08); padding-top:18px; display:flex; justify-content:space-between; width:100%; }
     @media (max-width:1024px){ .hero{grid-template-columns:1fr;text-align:center;padding:60px 24px}.hero-visual{max-width:700px;width:100%;margin:auto}.hero p{max-width:680px;margin-left:auto;margin-right:auto}.hero-btns,.credential-strip{justify-content:center}.iit-inner{grid-template-columns:1fr}.course-grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.cta-strip{flex-direction:column;text-align:center}.footer-top{flex-direction:column}.footer-links{width:100%;justify-content:space-between}}
-    @media (max-width:768px){ .trust-bar{display:none}.jg-banner{display:none}nav{min-height:64px;padding:12px 16px;flex-wrap:wrap;gap:12px}.trust-bar{padding:12px 16px;gap:12px}.trust-sep{display:none}.trust-item{justify-content:center;text-align:center}.hero{padding:50px 16px;gap:30px}.hero h1{font-size:34px}.hero-card{flex-wrap:wrap;text-align:left}.hero-card-meta{margin-left:0;text-align:left;width:100%;display:flex;align-items:center;gap:8px}.hero-card-meta .wlabel{margin-right:auto}.jg-banner{flex-direction:column;text-align:center;padding:24px 16px}.jg-tag{margin-left:0}.stats{grid-template-columns:1fr 1fr}.iit-section,.section,.why-section{padding:50px 16px}.iit-right{grid-template-columns:1fr}.iit-card{grid-column:auto!important}.course-grid,.why-grid{grid-template-columns:1fr}.cta-strip{padding:50px 16px}.cta-strip-btns{flex-direction:column;width:100%}.btn-white,.btn-outline-white{width:100%}.footer-links{flex-wrap:wrap;gap:24px}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+    @media (max-width:768px){ nav{min-height:64px;padding:12px 16px;flex-wrap:wrap;gap:12px}.trust-sep{display:none}.hero{padding:50px 16px;gap:30px}.hero h1{font-size:34px}.hero-card{flex-wrap:wrap;text-align:left}.hero-card-meta{margin-left:0;text-align:left;width:100%;display:flex;align-items:center;gap:8px}.hero-card-meta .wlabel{margin-right:auto}.jg-banner{flex-direction:column;text-align:center;padding:24px 16px}.jg-tag{margin-left:0}.stats{grid-template-columns:1fr 1fr}.iit-section,.section,.why-section{padding:50px 16px}.iit-right{grid-template-columns:1fr}.iit-card{grid-column:auto!important}.course-grid,.why-grid{grid-template-columns:1fr}.cta-strip{padding:30px 16px;gap:14px}.cta-strip-btns{flex-direction:row;width:100%;gap:10px}.btn-white,.btn-outline-white{flex:1;width:auto;padding:11px 8px;font-size:13px;white-space:normal}.footer-links{flex-wrap:wrap;gap:24px}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
     @media (max-width:480px){ nav{padding:12px 14px}.logo{font-size:20px}.hero{padding:40px 14px}.hero h1{font-size:28px;line-height:1.3}.hero-btns{flex-direction:column;width:100%}.btn-primary,.btn-ghost{width:100%;text-align:center}.hero-card{padding:14px}.hero-card-text{width:calc(100% - 58px)}.stat-num{font-size:22px}.stat-item{padding:14px 8px}.section h2,.why-section h2,.iit-left h2{font-size:24px}.cta-strip h2{font-size:22px}.stats{grid-template-columns:repeat(2,1fr)}.stat-item:nth-child(2){border-right:none}.stat-item:nth-child(3){border-top:1px solid rgba(255,255,255,.15)}.footer-links{flex-direction:column}footer{padding:32px 16px}.batch-badge{display:flex;width:100%;justify-content:center;line-height:1.4}}
- 
-    
+
+    /* ===== MOBILE CONTENT PRIORITIZATION (≤768px) =====
+       Keep desktop/tablet exactly as-is. On phones: surface the high-value
+       trust/urgency signals, restore the job-guarantee banner (was fully
+       hidden), and tuck secondary detail (supervision bullets, footer link
+       lists) behind tap-to-expand accordions instead of hiding them.
+       Accordions use a JS-toggled .open class (not native <details>) so
+       behavior is identical and predictable across browsers. */
+    .iit-toggle-btn{display:none}
+    @media (max-width:768px){
+      .trust-bar{display:none}
+
+      .jg-banner{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 18px;gap:10px}
+      .jg-icon{font-size:30px}
+      .jg-text h3{font-size:16px}
+      .jg-text p{font-size:12px;max-width:100%}
+      .jg-tag{margin-left:0;width:100%;text-align:center}
+
+      .iit-points-toggle{border:1px solid #F0D080;border-radius:12px;background:var(--white);margin-top:18px;overflow:hidden}
+      .iit-toggle-btn{display:flex;width:100%;align-items:center;justify-content:space-between;background:none;border:none;padding:13px 16px;font-family:inherit;font-size:13px;font-weight:600;color:var(--near-black);cursor:pointer}
+      .iit-toggle-arrow{color:var(--gold);font-size:13px;transition:transform .2s ease}
+      .iit-points-toggle.open .iit-toggle-arrow{transform:rotate(180deg)}
+      .iit-points-toggle .iit-points{display:none;padding:0 16px 16px;margin-top:0}
+      .iit-points-toggle.open .iit-points{display:flex}
+
+      .why-card{padding:18px 16px;gap:14px}
+      .why-icon{font-size:22px}
+    }
+
+
     /* ===== STANDARD ENROLL FORM STYLES (clean & minimal) ===== */
     #compactEnroll {
       background: #fff;

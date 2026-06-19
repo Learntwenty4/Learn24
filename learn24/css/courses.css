@@ -49,6 +49,7 @@
     .mgr-text span { font-size:10px; color:var(--gold); font-weight:500; }
 
     .cc-body { padding:28px 30px 26px; display:flex; flex-direction:column; gap:14px; }
+    .cc-scroll { display:flex; flex-direction:column; gap:14px; }
     .cc-top-row { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; }
     .job-guarantee-tag { display:inline-flex; align-items:center; gap:5px; background:#E8FBF1; border:1px solid #9FE1CB; color:#085041; font-size:12px; font-weight:600; padding:5px 12px; border-radius:20px; white-space:nowrap; flex-shrink:0; }
     .section-sublabel { font-size:12px; font-weight:500; text-transform:uppercase; letter-spacing:.08em; }
@@ -133,30 +134,44 @@
       nav{min-height:64px;padding:12px 16px;flex-wrap:wrap;gap:12px}
       .courses-mobile-link{flex:1;display:flex;align-items:center;justify-content:space-between;border-radius:12px;padding:12px 14px;background:var(--gray-light);color:var(--near-black);font-size:14px;text-decoration:none;transition:.18s ease}
       /* Hero compact */
-      .page-hero{padding:32px 16px;gap:28px}
+      .page-hero{padding:32px 16px;gap:20px}
       .ph-left h1{font-size:26px}
-      .ph-left p{font-size:13px;margin-bottom:18px}
+      .ph-left p{font-size:13px;margin-bottom:14px}
       .ph-badges{gap:6px}
       .ph-badge{font-size:11px;padding:5px 10px}
-      .ph-right{max-width:100%;gap:10px}
-      .ph-stat{padding:14px 10px}
-      .ph-stat-num{font-size:22px}
+      .ph-right{display:grid;grid-template-columns:repeat(2,1fr);max-width:320px;width:100%;margin:0 auto;gap:18px 16px}
+      .ph-stat{background:none;border:none;padding:0}
+      .ph-stat-num{font-size:22px;margin-bottom:0}
       .ph-stat-label{font-size:11px}
       /* Course cards */
       .courses-section{padding:32px 14px}
-      .course-card{margin-bottom:20px;border-radius:16px}
-      .cc-sidebar{padding:18px 16px;gap:12px}
-      .cc-body{padding:20px 16px;gap:12px}
-      .cc-icon{width:48px;height:48px;font-size:22px}
+      .course-card{margin-bottom:16px;border-radius:16px}
+      .cc-sidebar{padding:14px 16px;gap:10px}
+      .cc-head{display:flex;align-items:center;gap:10px}
+      .cc-icon{width:36px;height:36px;font-size:17px;border-radius:9px;flex-shrink:0}
+      .cc-head h2{flex:1;min-width:0;font-size:15px;line-height:1.25}
+      .cc-meta-row{display:flex;gap:8px}
+      .cc-duration-box{flex:1;min-width:0;padding:6px 10px}
+      .dur-num{font-size:16px}
+      .dur-label{font-size:10px;margin-top:0}
+      .cc-mgr{flex:1;min-width:0;padding:6px 10px;gap:6px}
+      .mgr-avatar{width:24px;height:24px;font-size:9px}
+      .mgr-text p{font-size:10px;margin-bottom:0}
+      .mgr-text span{font-size:9px}
+      .cc-body{padding:16px 14px;gap:10px}
       .cc-top-row{flex-direction:column;gap:8px}
-      .learn-grid{grid-template-columns:1fr}
-      .cc-footer{flex-direction:column;align-items:stretch;gap:12px}
-      .cc-cta{flex-direction:column;width:100%}
-      .btn-primary,.btn-ghost{width:100%;text-align:center}
+      .learn-grid{grid-template-columns:1fr;gap:6px}
+      .cc-scroll{gap:10px;max-height:150px;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-right:6px;-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 22px),transparent 100%);mask-image:linear-gradient(to bottom,#000 calc(100% - 22px),transparent 100%)}
+      .cc-scroll::-webkit-scrollbar{width:4px}
+      .cc-scroll::-webkit-scrollbar-thumb{background:rgba(13,27,42,.18);border-radius:4px}
+      .cc-footer{flex-direction:column;align-items:stretch;gap:8px;padding-top:12px}
+      .cc-cta{flex-direction:row;width:100%;gap:8px}
+      .cc-cta a,.cc-cta button{flex:1}
+      .btn-primary,.btn-ghost{width:100%;text-align:center;padding:9px 12px;font-size:13px}
       /* CTA */
-      .cta-strip{padding:40px 16px}
-      .cta-strip-btns{flex-direction:column;width:100%}
-      .btn-white,.btn-outline-white{width:100%}
+      .cta-strip{padding:30px 16px;gap:14px}
+      .cta-strip-btns{flex-direction:row;width:100%;gap:10px}
+      .btn-white,.btn-outline-white{flex:1;width:auto;padding:11px 8px;font-size:13px;white-space:normal}
       /* Footer compact */
       footer{padding:28px 16px 20px}
       .footer-top>div:first-child{text-align:center;margin-bottom:8px}
@@ -172,7 +187,7 @@
       .logo{font-size:20px}
       .page-hero{padding:28px 14px}
       .ph-left h1{font-size:24px}
-      .ph-right{gap:8px}
+      .ph-right{gap:10px 16px}
       .ph-stat-num{font-size:20px}
       .cc-sidebar h2{font-size:18px}
       .dur-num{font-size:24px}

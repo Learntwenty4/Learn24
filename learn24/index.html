@@ -547,11 +547,11 @@
   <div class="trust-bar">
     <div class="trust-item">🎓 <strong>IIT &amp; IIM Alumni</strong> Designed to Mentor</div>
     <div class="trust-sep">|</div>
-    <div class="trust-item">✅ <strong>100% Job </strong>Guaranteed Courses</div>
+    <div class="trust-item trust-essential">✅ <strong>100% Job </strong>Guaranteed Courses</div>
     <div class="trust-sep">|</div>
     <div class="trust-item">👨‍💼 Dedicated <strong>IIT/IIM Course Manager</strong> per Batch</div>
     <div class="trust-sep">|</div>
-    <div class="trust-item">🗓 Next batch: <strong> 01 July, 2026</strong></div>
+    <div class="trust-item trust-essential">🗓 Next batch: <strong> 01 July, 2026</strong></div>
   </div>
   <section class="hero">
     <div class="hero-left">
@@ -567,8 +567,9 @@
       </div>
       <p>Practical, mentor-led courses for working professionals. Every course is designed, supervised, and managed by
         IIT &amp; IIM alumni — with a 100% job placement guarantee.</p>
-      <div class="hero-btns"><a href="ExploreCourses.html" class="btn-primary">Explore Courses</a><button
-          class="btn-ghost">Talk to Us</button></div>
+      <div class="hero-btns"><a href="ExploreCourses.html" class="btn-primary">Explore Courses</a>
+       <a href="tel:+918920680256" class="btn-ghost">Talk to Us</a>
+        </div>
       <div class="batch-badge">🗓 Next batch starts 01 July, 2026 &nbsp;·&nbsp; Limited seats</div>
     </div>
 
@@ -641,13 +642,18 @@
         <p>Every course at Learn24 is built, reviewed, and supervised by alumni from India's most prestigious
           institutions. Your Course Manager — an IIT or IIM alumnus — oversees the entire program, the trainers, and
           your progress.</p>
-        <div class="iit-points">
-          <div class="iit-point">Each course has a dedicated IIT/IIM alumnus as Course Manager who oversees all trainers
-            and curriculum delivery.</div>
-          <div class="iit-point">Curriculum is benchmarked against industry standards and reviewed every quarter.</div>
-          <div class="iit-point">Trainers are hired, trained, and evaluated under the Course Manager's supervision.
-          </div>
-          <div class="iit-point">Direct access to your Course Manager for career guidance and job placement support.
+        <div class="iit-points-toggle" id="iitPointsToggle">
+          <button type="button" class="iit-toggle-btn" id="iitToggleBtn" aria-expanded="false">How supervision works
+            <span class="iit-toggle-arrow">▾</span></button>
+          <div class="iit-points">
+            <div class="iit-point">Each course has a dedicated IIT/IIM alumnus as Course Manager who oversees all
+              trainers and curriculum delivery.</div>
+            <div class="iit-point">Curriculum is benchmarked against industry standards and reviewed every quarter.
+            </div>
+            <div class="iit-point">Trainers are hired, trained, and evaluated under the Course Manager's supervision.
+            </div>
+            <div class="iit-point">Direct access to your Course Manager for career guidance and job placement
+              support.</div>
           </div>
         </div>
       </div>
@@ -775,7 +781,7 @@
   <section class="cta-strip">
     <h2>Get hired — or get your <span>money back.</span> That's the Learn24 promise.</h2>
     <div class="cta-strip-btns"><a href="javascript:void(0)" class="btn-white" onclick="openEnrollModal(event)">Reserve
-        My Seat</a><button class="btn-outline-white">Talk to Us</button></div>
+        My Seat</a><a href="tel:+918920680256" class="btn-outline-white">Talk to Us</a></div>
   </section>
   <footer>
     <div class="footer-top">
@@ -785,16 +791,23 @@
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h5>Courses</h5><a href="CourseDetail.html">Data Analysis with AI</a><a href="Courses.html">Data Science with
-            AI</a><a href="Courses.html">Digital Marketing with AI</a>
+          <button type="button" class="footer-col-toggle" aria-expanded="false">Courses<span
+              class="footer-col-arrow">+</span></button>
+          <div class="footer-col-links"><a href="coursedetail.html">Data Analysis with AI</a><a
+              href="Science.html">Data Science with AI</a><a href="marketing.html">Digital Marketing with AI</a></div>
         </div>
         <div class="footer-col">
-          <h5>Company</h5><a href="About_Us.html">About Us</a><a href="Mentors.html">Mentors</a><a
-            href="Testimonials.html">Testimonials</a>
+          <button type="button" class="footer-col-toggle" aria-expanded="false">Company<span
+              class="footer-col-arrow">+</span></button>
+          <div class="footer-col-links"><a href="About_Us.html">About Us</a><a href="Mentors.html">Mentors</a><a
+              href="Testimonials.html">Testimonials</a></div>
         </div>
         <div class="footer-col">
-          <h5>Contact</h5><a href="mailto:info@learn24.in">info@learn24.in</a><a href="tel:+918920680256">+91 89206
-            80256</a><a href="javascript:void(0)" onclick="openEnrollModal(event)">Enroll Now</a>
+          <button type="button" class="footer-col-toggle" aria-expanded="false">Contact<span
+              class="footer-col-arrow">+</span></button>
+          <div class="footer-col-links"><a href="mailto:info@learn24.in">info@learn24.in</a><a
+              href="tel:+918920680256">+91 89206 80256</a><a href="javascript:void(0)"
+              onclick="openEnrollModal(event)">Enroll Now</a></div>
         </div>
       </div>
     </div>

@@ -4,6 +4,23 @@
     coursesToggle.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); const isOpen = coursesDropdown.classList.toggle('open'); coursesToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); });
     document.addEventListener('click', (event) => { if (!siteNav.contains(event.target) && siteNav.classList.contains('nav-open')) { siteNav.classList.remove('nav-open'); mobileNavToggle.setAttribute('aria-expanded', 'false'); mobileNavToggle.textContent = '☰'; } });
 
+    var iitToggleBtn = document.getElementById('iitToggleBtn');
+    var iitPointsToggle = document.getElementById('iitPointsToggle');
+    if (iitToggleBtn && iitPointsToggle) {
+      iitToggleBtn.addEventListener('click', function () {
+        var isOpen = iitPointsToggle.classList.toggle('open');
+        iitToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    document.querySelectorAll('.footer-col-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var col = btn.closest('.footer-col');
+        var isOpen = col.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+
      const ENROLL_URL = 'https://script.google.com/macros/s/AKfycbySawnCoMdM60Hl3uvHmYvfmxmgUxx7DfJX-4Ep94UavlSpq-MI72g5hD9YMDMkk8G5_g/exec';
     const COURSES = ['Data Analysis with AI', 'Data Science with AI', 'Digital Marketing with AI'];
     var selectedCourse = 1;

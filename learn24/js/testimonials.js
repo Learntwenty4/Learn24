@@ -26,6 +26,15 @@
       }
     });
 
+    /* ── Footer Accordion (mobile) ── */
+    document.querySelectorAll('.footer-col-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const col = btn.closest('.footer-col');
+        const isOpen = col.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+
     /* ── Filter Tabs ── */
     function filterCards(btn, course) {
       document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
